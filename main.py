@@ -34,15 +34,8 @@ def select_todolist():
 
 
 def view_todos():
-    print("Select the todolist to view from: ")
-    for index, element in enumerate(todolists, 1):
-        print(f"{index}. {element.get_name()}")
-
-    user_input = 0
-
-    while user_input < 1 or user_input > len(todolists):
-        user_input = int(input(("Enter your option: ")))
-    view_selected_todos = todolists[user_input - 1]
+    
+    view_selected_todos = select_todolist()
 
     for index, a_todo in enumerate(view_selected_todos.get_todos(), 1):
         print(f"{index}. {a_todo.get_name()}")
